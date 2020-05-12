@@ -37,9 +37,9 @@
             <li>
                 <strong>Due: </strong> <?= $task['due'] ?>
                 <?php
-                    if ($task['due'] == 'Today') {
-                        echo ", <font color='red'><strong>Semangat !!!</strong></font>";
-                    }
+                if ($task['due'] == 'Today') {
+                    echo ", <font color='red'><strong>Semangat !!!</strong></font>";
+                }
                 ?>
             </li>
 
@@ -49,9 +49,12 @@
 
             <li>
                 <strong>Status: </strong> <?= $task['completed'] ? 'DONE' : 'NOT DONE' ?>
-                <?php if ($task['completed']): ?>
-                        <span class="icon">&#9989</span>
+                <?php if ($task['completed']) : ?>
+                    <span class="icon">&#9989</span>
                 <?php endif ?>
+            </li>
+            <li>
+                <strong>Message: </strong><?= $message ?>
             </li>
         </ul>
     </ul>
