@@ -33,4 +33,33 @@ $person = [
 $student['hobby'] = 'Coding';
 unset($student['hobby']);
 
-require 'index-view.php';
+class Task{
+
+    public $description;
+    public $completed = false;
+
+    public function __construct($description)
+    {
+        $this->description = $description;
+    }
+
+    public function complete()
+    {
+        $this->completed = true;
+    }
+
+    public function isCompleted()
+    {
+        return $this->completed;
+    }
+}
+
+$tasks = [
+    new Task('Go To The Store'),
+    new Task('Buy Some Stuff'),
+    new Task('Go To The Home')
+];
+
+$tasks[0]->complete();
+
+ require 'index-view.php';

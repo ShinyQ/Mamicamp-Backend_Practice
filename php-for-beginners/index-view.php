@@ -58,6 +58,12 @@
             </li>
         </ul>
     </ul>
+
+    <ul>
+        <?php foreach ($tasks as $task) : ?>
+            <li><?= $task->description ?> : <?= $task->completed ?></li>
+        <?php endforeach ?>
+    </ul>
 </body>
 
 </html>
