@@ -1,7 +1,7 @@
 <?php
 require 'basic.php';
 require 'model/Task.php';
-$query = require 'database/boot.php';
+$query = require 'boot.php';
 
 $tasks = $query->selectAll('todos', 'Task');
 
