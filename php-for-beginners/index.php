@@ -1,6 +1,8 @@
 <?php
 
 require 'functions.php';
+require 'connect.php';
+require 'Task.php';
 
 if (empty($_GET['name'])) {
     $greeting = "Hello World";
@@ -33,33 +35,9 @@ $person = [
 $student['hobby'] = 'Coding';
 unset($student['hobby']);
 
-class Task{
+$statement = $pdo->prepare('select * from todos');
+$statement->execute();
 
-    public $description;
-    public $completed = false;
+$tasks = $statement->fetchAll(PDO::FETCH_CLASS, 'Task');
 
-    public function __construct($description)
-    {
-        $this->description = $description;
-    }
-
-    public function complete()
-    {
-        $this->completed = true;
-    }
-
-    public function isCompleted()
-    {
-        return $this->completed;
-    }
-}
-
-$tasks = [
-    new Task('Go To The Store'),
-    new Task('Buy Some Stuff'),
-    new Task('Go To The Home')
-];
-
-$tasks[0]->complete();
-
- require 'index-view.php';
+require 'index.view.php';
