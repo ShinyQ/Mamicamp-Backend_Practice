@@ -53,9 +53,6 @@
                     <span class="icon">&#9989</span>
                 <?php endif ?>
             </li>
-            <li>
-                <strong>Message: </strong><?= $message ?>
-            </li>
         </ul>
     </ul>
 
