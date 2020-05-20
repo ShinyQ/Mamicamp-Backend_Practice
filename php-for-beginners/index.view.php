@@ -15,6 +15,10 @@
 </head>
 
 <body>
+    <nav>
+        <li><a href="/page/about.php">About</a></li>
+        <li><a href="/page/contact.php">Contact</a></li>
+    </nav>
     <header>
         <h1>
             <?= $greeting ?>
